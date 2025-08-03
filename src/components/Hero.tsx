@@ -1,10 +1,11 @@
 import { useEffect, useState } from 'react';
 import { motion, useScroll, useTransform, AnimatePresence } from 'framer-motion';
-import { FaGithub, FaLinkedin, FaTwitter, FaArrowDown, FaDownload, FaEnvelope } from 'react-icons/fa';
+import { FaGithub, FaLinkedin, FaArrowDown, FaDownload, FaEnvelope, FaInstagram } from 'react-icons/fa';
 import profileImg from '../assets/profile.jpg';
-import cvPdf from '../assets/Ihsas.pdf';
+import cvPdf from '../assets/AhdheerCV.pdf';
 import AnimatedText from './AnimatedText';
 import { fadeIn, staggerContainer, scaleIn } from '../types/animations';
+
 
 const Hero = () => {
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
@@ -72,25 +73,25 @@ const Hero = () => {
   const socialLinks = [
     {
       icon: FaGithub,
-      href: "https://github.com/Ihsas01",
+      href: "http://github.com/MohamedAhdheer",
       label: "GitHub",
       color: "hover:text-gray-400"
     },
     {
       icon: FaLinkedin,
-      href: "https://www.linkedin.com/in/mohamed-ihsas-2a928a2b7",
+      href: "https://www.linkedin.com/in/mohamed-ahdheer-64983235b",
       label: "LinkedIn",
       color: "hover:text-blue-400"
     },
     {
-      icon: FaTwitter,
-      href: "https://twitter.com",
-      label: "Twitter",
+      icon: FaInstagram,
+      href: "https://www.instagram.com/_mhd._.ahdheer_?igsh=ZnRybXIwajZxbGNo&utm_source=qr",
+      label: "Instagram",
       color: "hover:text-blue-400"
     },
     {
       icon: FaEnvelope,
-      href: "mailto:ihsas@example.com",
+      href: "mailto:ahdheerofficial1@gmail.com",
       label: "Email",
       color: "hover:text-red-400"
     }
@@ -146,9 +147,9 @@ const Hero = () => {
               transition={{ duration: 0.8, delay: 0.2 }}
             >
               <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-bold leading-tight">
-                <span className="gradient-text">Ihsas</span>
+                <span className="gradient-text">Mohamed</span>
                 <br />
-                <span className="text-light">Ifthikar</span>
+                <span className="text-light">Ahdheer</span>
               </h1>
             </motion.div>
 
@@ -269,7 +270,7 @@ const Hero = () => {
             >
               <img
                 src={profileImg}
-                alt="Ihsas Ifthikar - Full Stack Developer"
+                alt="Mohamed Ahdheer - Full Stack Developer"
                 className="w-48 h-48 sm:w-64 sm:h-64 md:w-80 md:h-80 lg:w-96 lg:h-96 rounded-full object-cover border-4 border-secondary shadow-2xl bg-primary relative z-10 transition-all duration-500 group-hover:border-accent group-hover:shadow-glow-lg"
                 draggable={false}
               />

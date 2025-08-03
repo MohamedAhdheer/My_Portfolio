@@ -55,11 +55,11 @@ function App() {
       <ScrollToTop />
       
       {/* Footer */}
-      <footer className="relative z-10 bg-primary-dark/50 backdrop-blur-sm border-t border-white/10 py-8">
+      <footer className="relative z-10 bg-primary-dark/50 backdrop-bnpmlur-sm border-t border-white/10 py-8">
         <div className="container-custom">
           <div className="text-center">
             <p className="text-tertiary text-sm">
-              © 2024 Ihsas Ifthikar. Built with ❤️ using React, TypeScript, and Tailwind CSS.
+              © 2024 Mohamed Ahdheer. Built with ❤️ using React, TypeScript, and Tailwind CSS.
             </p>
           </div>
         </div>

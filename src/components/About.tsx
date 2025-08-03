@@ -179,7 +179,7 @@ const About: React.FC = () => {
                         >
                           👨‍💻
                         </motion.div>
-                        <h3 className="text-xl sm:text-2xl font-bold text-light">Ihsas Ifthikar</h3>
+                        <h3 className="text-xl sm:text-2xl font-bold text-light">Mohamed Ahdheer</h3>
                         <p className="text-tertiary text-sm sm:text-base">Full Stack Developer</p>
                       </div>
                     </div>
@@ -216,7 +216,7 @@ const About: React.FC = () => {
                   {/* Quick Stats */}
                   <div className="grid grid-cols-2 sm:grid-cols-3 gap-3 sm:gap-4">
                     <div className="card text-center p-3 sm:p-4">
-                      <div className="text-xl sm:text-2xl font-bold text-secondary mb-1">4+</div>
+                      <div className="text-xl sm:text-2xl font-bold text-secondary mb-1">3+</div>
                       <div className="text-xs sm:text-sm text-tertiary">Years Experience</div>
                     </div>
                     <div className="card text-center p-3 sm:p-4">

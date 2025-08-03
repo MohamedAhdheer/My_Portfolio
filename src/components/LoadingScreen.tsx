@@ -41,6 +41,11 @@ const LoadingScreen = () => {
 
   if (!loading) return null;
 
+  // Calculate stroke dash offset for progress circle
+  const radius = 50;
+  const circumference = 2 * Math.PI * radius;
+  const strokeDashoffset = circumference - (progress / 100) * circumference;
+
   return (
     <AnimatePresence>
       <motion.div
@@ -141,7 +146,7 @@ const LoadingScreen = () => {
                 animate={{ scale: [1, 1.02, 1] }}
                 transition={{ duration: 3, repeat: Infinity }}
               >
-                Ihsas
+                Ahdheer
               </motion.h1>
             </motion.div>
 
@@ -151,7 +156,7 @@ const LoadingScreen = () => {
               animate={{ opacity: 1 }}
               transition={{ delay: 1 }}
             >
-              Full Stack Developer & Creative Thinker
+              Full Stack Developer & UI/UX designer
             </motion.p>
           </motion.div>
 
@@ -176,48 +181,68 @@ const LoadingScreen = () => {
             </AnimatePresence>
           </motion.div>
 
-          {/* Progress bar */}
+          {/* Progress circle */}
           <motion.div
-            className="w-80 md:w-96 mx-auto mb-8"
-            initial={{ opacity: 0, scaleX: 0 }}
-            animate={{ opacity: 1, scaleX: 1 }}
+            className="w-32 h-32 mx-auto mb-8 relative"
+            initial={{ opacity: 0, scale: 0 }}
+            animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 1, delay: 2 }}
           >
-            <div className="relative">
-              {/* Background bar */}
-              <div className="w-full h-3 bg-primary-light/30 rounded-full overflow-hidden backdrop-blur-sm">
-                {/* Progress fill */}
-                <motion.div
-                  className="h-full bg-gradient-to-r from-secondary to-accent rounded-full relative"
-                  initial={{ width: 0 }}
-                  animate={{ width: `${progress}%` }}
-                  transition={{ duration: 0.5 }}
-                >
-                  {/* Shimmer effect */}
-                  <motion.div
-                    className="absolute inset-0 bg-gradient-to-r from-transparent via-white/30 to-transparent"
-                    animate={{
-                      x: ['-100%', '100%'],
-                    }}
-                    transition={{
-                      duration: 2,
-                      repeat: Infinity,
-                      ease: "linear",
-                    }}
-                  />
-                </motion.div>
-              </div>
-              
-              {/* Progress percentage */}
-              <motion.div
-                className="absolute -top-8 left-1/2 transform -translate-x-1/2 text-sm text-secondary font-mono"
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                transition={{ delay: 2.5 }}
-              >
-                {Math.round(progress)}%
-              </motion.div>
-            </div>
+            <svg className="w-full h-full" viewBox="0 0 120 120">
+              {/* Background circle */}
+              <circle
+                cx="60"
+                cy="60"
+                r="50"
+                fill="none"
+                stroke="rgba(255, 255, 255, 0.2)"
+                strokeWidth="8"
+              />
+              {/* Progress circle */}
+              <motion.circle
+                cx="60"
+                cy="60"
+                r="50"
+                fill="none"
+                stroke="url(#progressGradient)"
+                strokeWidth="8"
+                strokeDasharray={circumference}
+                strokeDashoffset={strokeDashoffset}
+                strokeLinecap="round"
+                transform="rotate(-90 60 60)"
+                initial={{ strokeDashoffset: circumference }}
+                animate={{ strokeDashoffset }}
+                transition={{ duration: 0.5 }}
+              />
+              {/* Gradient definition */}
+              <defs>
+                <linearGradient id="progressGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+                  <stop offset="0%" style={{ stopColor: '#00d4ff' }} />
+                  <stop offset="100%" style={{ stopColor: '#ff0080' }} />
+                </linearGradient>
+              </defs>
+            </svg>
+            {/* Progress percentage */}
+            <motion.div
+              className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-lg text-secondary font-mono"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ delay: 2.5 }}
+            >
+              {Math.round(progress)}%
+            </motion.div>
+            {/* Shimmer effect */}
+            <motion.div
+              className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent rounded-full"
+              animate={{
+                rotate: [0, 360],
+              }}
+              transition={{
+                duration: 2,
+                repeat: Infinity,
+                ease: "linear",
+              }}
+            />
           </motion.div>
 
           {/* Loading animation */}
@@ -337,4 +362,4 @@ const LoadingScreen = () => {
   );
 };
 
-export default LoadingScreen; 
+export default LoadingScreen;

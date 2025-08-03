@@ -100,9 +100,9 @@ const Navbar = () => {
               className="flex items-center space-x-2 cursor-pointer"
             >
               <div className="w-8 h-8 bg-gradient-to-r from-secondary to-accent rounded-lg flex items-center justify-center">
-                <span className="text-primary font-bold text-sm">I</span>
+                <span className="text-primary font-bold text-sm">A</span>
               </div>
-              <span className="text-xl sm:text-2xl font-bold gradient-text">Ihsas</span>
+              <span className="text-xl sm:text-2xl font-bold gradient-text">Ahdheer</span>
             </motion.div>
 
             {/* Desktop Menu */}
@@ -220,9 +220,9 @@ const Navbar = () => {
                 <div className="flex items-center justify-between p-6 border-b border-white/10">
                   <div className="flex items-center space-x-2">
                     <div className="w-8 h-8 bg-gradient-to-r from-secondary to-accent rounded-lg flex items-center justify-center">
-                      <span className="text-primary font-bold text-sm">I</span>
+                      <span className="text-primary font-bold text-sm">A</span>
                     </div>
-                    <span className="text-xl font-bold gradient-text">Ihsas</span>
+                    <span className="text-xl font-bold gradient-text">Ahdheer</span>
                   </div>
                   <motion.button
                     whileHover={{ scale: 1.1 }}

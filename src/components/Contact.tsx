@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { FaEnvelope, FaUser, FaComment, FaPhone, FaMapMarkerAlt, FaGithub, FaLinkedin, FaTwitter, FaCheck, FaTimes, FaPaperPlane, FaSpinner } from 'react-icons/fa';
+import { FaEnvelope, FaUser, FaComment, FaPhone, FaMapMarkerAlt, FaGithub, FaLinkedin, FaTwitter, FaCheck, FaTimes, FaPaperPlane, FaSpinner, FaInstagram } from 'react-icons/fa';
 import emailjs from '@emailjs/browser';
 
 const Contact = () => {
@@ -75,7 +75,7 @@ const Contact = () => {
         from_email: formData.email,
         subject: formData.subject,
         message: formData.message,
-        to_email: 'mohamedihsas001@gmail.com',
+        to_email: 'ahdheerofficial1@gmail.com',
       };
 
       await emailjs.send(
@@ -89,7 +89,7 @@ const Contact = () => {
       setFormData({ name: '', email: '', subject: '', message: '' });
     } catch (error) {
       console.error('Error:', error);
-      setError('Failed to send message. Please try again or contact me directly at mohamedihsas001@gmail.com');
+      setError('Failed to send message. Please try again or contact me directly at ahdheerofficial1@gmail.com');
     } finally {
       setLoading(false);
     }
@@ -99,15 +99,15 @@ const Contact = () => {
     {
       icon: FaEnvelope,
       title: "Email",
-      content: "mohamedihsas001@gmail.com",
-      link: "mailto:mohamedihsas001@gmail.com",
+      content: "ahdheerofficial1@gmail.com",
+      link: "mailto:ahdheerofficial1@gmail.com",
       color: "text-red-400"
     },
     {
       icon: FaPhone,
       title: "Phone",
-      content: "+94 76 391 3526",
-      link: "tel:+94763913526",
+      content: "+94 76 001 0314",
+      link: "tel:+94760010314",
       color: "text-green-400"
     },
     {
@@ -123,19 +123,19 @@ const Contact = () => {
     {
       icon: FaGithub,
       title: "GitHub",
-      link: "https://github.com/Ihsas01",
+      link: "http://github.com/MohamedAhdheer",
       color: "hover:text-gray-400"
     },
     {
       icon: FaLinkedin,
       title: "LinkedIn",
-      link: "https://www.linkedin.com/in/mohamed-ihsas-2a928a2b7",
+      link: "https://www.linkedin.com/in/mohamed-ahdheer-64983235b",
       color: "hover:text-blue-400"
     },
     {
-      icon: FaTwitter,
-      title: "Twitter",
-      link: "https://twitter.com",
+      icon: FaInstagram,
+      title: "Instagram",
+      link: "https://www.instagram.com/_mhd._.ahdheer_?igsh=ZnRybXIwajZxbGNo&utm_source=qr",
       color: "hover:text-blue-400"
     }
   ];
