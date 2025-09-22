@@ -6,7 +6,7 @@ import emailjs from '@emailjs/browser';
 const Contact = () => {
   useEffect(() => {
     // Initialize EmailJS with your public key
-    emailjs.init('mXKWDY9ESIHAUk0XG');
+    emailjs.init('pOhg4Ja8CH8KeCzpu');
   }, []);
 
   const [formData, setFormData] = useState({
@@ -79,10 +79,10 @@ const Contact = () => {
       };
 
       await emailjs.send(
-        'service_nbhynxk',
-        'template_lt8urts',
+        'service_nd1b8se',
+        'template_5lv6yqn',
         templateParams,
-        'mXKWDY9ESIHAUk0XG'
+        'pOhg4Ja8CH8KeCzpu'
       );
       
       setSuccess(true);

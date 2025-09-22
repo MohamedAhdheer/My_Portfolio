@@ -94,29 +94,6 @@ const Skills: React.FC = () => {
       experience: 'Advanced',
       projects: 12
     },
-    { 
-      name: 'Next.js', 
-      icon: <SiNextdotjs size={40} />, 
-      level: 65, 
-      color: '#000000',
-      description: 'Full-stack React framework for production',
-      years: 1,
-      category: 'frontend',
-      experience: 'Intermediate',
-      projects: 4
-    },
-    { 
-      name: 'Framer Motion', 
-      icon: <SiFramer size={40} />, 
-      level: 25, 
-      color: '#0055FF',
-      description: 'Creating smooth animations and interactions',
-      years: 2,
-      category: 'frontend',
-      experience: 'Advanced',
-      projects: 8
-    },
-
     // Backend
     { 
       name: 'Node.js', 
@@ -151,74 +128,6 @@ const Skills: React.FC = () => {
       experience: 'Advanced',
       projects: 10
     },
-    { 
-      name: 'Redux', 
-      icon: <SiRedux size={40} />, 
-      level: 50, 
-      color: '#764ABC',
-      description: 'State management and predictable data flow',
-      years: 1,
-      category: 'backend',
-      experience: 'Advanced',
-      projects: 2
-    },
-    { 
-      name: 'Vite', 
-      icon: <SiVite size={40} />, 
-      level: 70, 
-      color: '#646CFF',
-      description: 'Fast build tool and development server',
-      years: 1,
-      category: 'backend',
-      experience: 'Intermediate',
-      projects: 6
-    },
-    { 
-      name: 'REST APIs', 
-      icon: <FaServer size={40} />, 
-      level: 60, 
-      color: '#4A90E2',
-      description: 'Designing and implementing RESTful APIs',
-      years: 2,
-      category: 'backend',
-      experience: 'Advanced',
-      projects: 5
-    },
-
-    // Database
-    { 
-      name: 'MongoDB', 
-      icon: <SiMongodb size={40} />, 
-      level: 78, 
-      color: '#47A248',
-      description: 'Designing and optimizing NoSQL databases',
-      years: 1,
-      category: 'database',
-      experience: 'Advanced',
-      projects: 5
-    },
-    { 
-      name: 'MySQL', 
-      icon: <SiMysql size={40} />, 
-      level: 80, 
-      color: '#4479A1',
-      description: 'Relational database management and optimization',
-      years: 2,
-      category: 'database',
-      experience: 'Intermediate',
-      projects: 9
-    },
-    { 
-      name: 'SQLite', 
-      icon: <FaDatabase size={40} />, 
-      level: 75, 
-      color: '#003B57',
-      description: 'Lightweight database for mobile and web apps',
-      years: 1,
-      category: 'database',
-      experience: 'Intermediate',
-      projects: 5
-    },
 
     // Tools
     { 
@@ -232,28 +141,30 @@ const Skills: React.FC = () => {
       experience: 'Advanced',
       projects: 25
     },
+
+    // Database
     { 
-      name: 'Docker', 
-      icon: <FaDocker size={40} />, 
-      level: 20, 
-      color: '#2496ED',
-      description: 'Containerization and deployment',
-      years: 1,
-      category: 'tools',
+      name: 'MongoDB', 
+      icon: <SiMongodb size={40} />, 
+      level: 70, 
+      color: '#47A248',
+      description: 'Designing and managing NoSQL databases with MongoDB',
+      years: 2,
+      category: 'database',
       experience: 'Intermediate',
-      projects: 4
+      projects: 6
     },
     { 
-      name: 'AWS', 
-      icon: <FaAws size={40} />, 
-      level: 60, 
-      color: '#FF9900',
-      description: 'Cloud services and deployment',
-      years: 1,
-      category: 'tools',
-      experience: 'Intermediate',
-      projects: 3
-    }
+      name: 'MySQL', 
+      icon: <SiMysql size={40} />, 
+      level: 75, 
+      color: '#4479A1',
+      description: 'Relational database management with MySQL',
+      years: 2,
+      category: 'database',
+      experience: 'Advanced',
+      projects: 8
+    },
   ];
 
   const categories = [
@@ -432,26 +343,6 @@ const Skills: React.FC = () => {
             viewport={{ once: true }}
             className="mt-12 sm:mt-16"
           >
-            <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
-              <div className="card text-center p-6">
-                <div className="text-3xl font-bold text-secondary mb-2">
-                  {skills.length}+
-                </div>
-                <div className="text-tertiary text-sm">Technologies</div>
-              </div>
-              <div className="card text-center p-6">
-                <div className="text-3xl font-bold text-secondary mb-2">
-                  {skills.reduce((acc, skill) => acc + (skill.projects || 0), 0)}+
-                </div>
-                <div className="text-tertiary text-sm">Projects Completed</div>
-              </div>
-              <div className="card text-center p-6">
-                <div className="text-3xl font-bold text-secondary mb-2">
-                  {Math.max(...skills.map(s => s.years))}+
-                </div>
-                <div className="text-tertiary text-sm">Years Experience</div>
-              </div>
-            </div>
           </motion.div>
         </div>
       </section>
@@ -572,7 +463,7 @@ const Skills: React.FC = () => {
             </motion.div>
           </>
         )}
-      </AnimatePresence>
+      </AnimatePresence> 
     </>
   );
 };

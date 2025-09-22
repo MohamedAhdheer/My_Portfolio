@@ -7,40 +7,12 @@ const About: React.FC = () => {
 
   const tabs = [
     { id: 'about', name: 'About Me', icon: FaHeart },
-    { id: 'experience', name: 'Experience', icon: FaBriefcase },
+    
     { id: 'education', name: 'Education', icon: FaGraduationCap },
     { id: 'values', name: 'Values', icon: FaLightbulb },
   ];
 
-  const experience = [
-    {
-      year: '2023 - Present',
-      title: 'Full Stack Developer',
-      company: 'Freelance',
-      location: 'Remote',
-      description: 'Building modern web applications using React, Node.js, and various cloud technologies. Working with clients to deliver scalable solutions.',
-      technologies: ['React', 'Node.js', 'MongoDB', 'AWS', 'TypeScript'],
-      achievements: ['Delivered 10+ client projects', 'Improved performance by 40%', 'Mentored junior developers']
-    },
-    {
-      year: '2022 - 2023',
-      title: 'Web Developer',
-      company: 'Personal Projects',
-      location: 'Colombo, Sri Lanka',
-      description: 'Developed various web applications and tools, focusing on user experience and modern development practices.',
-      technologies: ['JavaScript', 'PHP', 'MySQL', 'HTML/CSS', 'Bootstrap'],
-      achievements: ['Built 15+ web applications', 'Open source contributions', 'Learned new technologies']
-    },
-    {
-      year: '2021 - 2022',
-      title: 'Student Developer',
-      company: 'University Projects',
-      location: 'University of Technology',
-      description: 'Worked on academic projects and personal learning, building foundational skills in web development.',
-      technologies: ['HTML', 'CSS', 'JavaScript', 'PHP', 'MySQL'],
-      achievements: ['Completed degree projects', 'Built first portfolio', 'Learned version control']
-    }
-  ];
+ 
 
   const education = [
     {
@@ -180,7 +152,7 @@ const About: React.FC = () => {
                           👨‍💻
                         </motion.div>
                         <h3 className="text-xl sm:text-2xl font-bold text-light">Mohamed Ahdheer</h3>
-                        <p className="text-tertiary text-sm sm:text-base">Full Stack Developer</p>
+                        <p className="text-tertiary text-sm sm:text-base">UI/UX Designer</p>
                       </div>
                     </div>
                   </div>
@@ -197,8 +169,8 @@ const About: React.FC = () => {
                   <div>
                     <h3 className="text-xl sm:text-2xl font-bold text-light mb-3 sm:mb-4">Passionate Developer</h3>
                     <p className="text-tertiary leading-relaxed mb-3 sm:mb-4 text-sm sm:text-base">
-                      I'm a dedicated full-stack developer with a passion for creating exceptional digital experiences. 
-                      With over 4 years of experience in web development, I specialize in building modern, scalable applications 
+                      I'm a dedicated full-stack developer & UI/UX designer with a passion for creating exceptional digital experiences. 
+                      With over 2+ years of experience in web development, I specialize in building modern, scalable applications 
                       that solve real-world problems.
                     </p>
                     <p className="text-tertiary leading-relaxed mb-3 sm:mb-4 text-sm sm:text-base">
@@ -213,85 +185,12 @@ const About: React.FC = () => {
                     </p>
                   </div>
 
-                  {/* Quick Stats */}
-                  <div className="grid grid-cols-2 sm:grid-cols-3 gap-3 sm:gap-4">
-                    <div className="card text-center p-3 sm:p-4">
-                      <div className="text-xl sm:text-2xl font-bold text-secondary mb-1">3+</div>
-                      <div className="text-xs sm:text-sm text-tertiary">Years Experience</div>
-                    </div>
-                    <div className="card text-center p-3 sm:p-4">
-                      <div className="text-xl sm:text-2xl font-bold text-secondary mb-1">70+</div>
-                      <div className="text-xs sm:text-sm text-tertiary">Projects Completed</div>
-                    </div>
-                    <div className="card text-center p-3 sm:p-4 col-span-2 sm:col-span-1">
-                      <div className="text-xl sm:text-2xl font-bold text-secondary mb-1">20+</div>
-                      <div className="text-xs sm:text-sm text-tertiary">Technologies</div>
-                    </div>
-                  </div>
+                  
                 </motion.div>
               </div>
             )}
 
-            {activeTab === 'experience' && (
-              <div className="space-y-6">
-                {experience.map((exp, index) => (
-                  <motion.div
-                    key={index}
-                    initial={{ opacity: 0, y: 20 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.6, delay: index * 0.1 }}
-                    viewport={{ once: true }}
-                    className="card p-4 sm:p-6"
-                  >
-                    <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between mb-4">
-                      <div className="flex-1">
-                        <div className="flex items-center space-x-2 mb-2">
-                          <span className="badge badge-primary text-xs">{exp.year}</span>
-                          <span className="text-tertiary text-xs flex items-center">
-                            <FaMapMarkerAlt className="mr-1" />
-                            {exp.location}
-                          </span>
-                        </div>
-                        <h3 className="text-lg sm:text-xl font-bold text-light mb-1">{exp.title}</h3>
-                        <p className="text-secondary font-medium text-sm sm:text-base">{exp.company}</p>
-                      </div>
-                    </div>
-                    
-                    <p className="text-tertiary text-sm sm:text-base leading-relaxed mb-4">
-                      {exp.description}
-                    </p>
-
-                    <div className="space-y-3">
-                      <div>
-                        <h4 className="text-sm font-medium text-light mb-2">Technologies Used</h4>
-                        <div className="flex flex-wrap gap-2">
-                          {exp.technologies.map((tech, techIndex) => (
-                            <span
-                              key={techIndex}
-                              className="text-xs bg-white/5 text-tertiary px-2 py-1 rounded border border-white/10"
-                            >
-                              {tech}
-                            </span>
-                          ))}
-                        </div>
-                      </div>
-
-                      <div>
-                        <h4 className="text-sm font-medium text-light mb-2">Key Achievements</h4>
-                        <ul className="space-y-1">
-                          {exp.achievements.map((achievement, achievementIndex) => (
-                            <li key={achievementIndex} className="flex items-start space-x-2 text-sm text-tertiary">
-                              <FaStar className="text-secondary mt-1 flex-shrink-0" size={10} />
-                              <span>{achievement}</span>
-                            </li>
-                          ))}
-                        </ul>
-                      </div>
-                    </div>
-                  </motion.div>
-                ))}
-              </div>
-            )}
+            
 
             {activeTab === 'education' && (
               <div className="space-y-6">
