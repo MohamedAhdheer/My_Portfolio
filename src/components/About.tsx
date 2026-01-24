@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { FaGraduationCap, FaBriefcase, FaCode, FaHeart, FaRocket, FaUsers, FaLightbulb, FaTrophy, FaMapMarkerAlt, FaStar } from 'react-icons/fa';
+import { FaGraduationCap, FaCode, FaHeart, FaRocket, FaUsers, FaLightbulb, FaTrophy, FaMapMarkerAlt, FaStar } from 'react-icons/fa';
 
 const About: React.FC = () => {
   const [activeTab, setActiveTab] = useState('about');
