@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { FaEnvelope, FaUser, FaComment, FaPhone, FaMapMarkerAlt, FaGithub, FaLinkedin, FaTwitter, FaCheck, FaTimes, FaPaperPlane, FaSpinner, FaInstagram } from 'react-icons/fa';
+import { FaEnvelope, FaUser, FaComment, FaPhone, FaMapMarkerAlt, FaGithub, FaLinkedin, FaCheck, FaTimes, FaPaperPlane, FaSpinner, FaInstagram } from 'react-icons/fa';
 import emailjs from '@emailjs/browser';
 
 const Contact = () => {

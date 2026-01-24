@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import {
-  FaReact, FaNodeJs, FaGitAlt, FaDocker, FaAws, FaHtml5, FaCss3Alt, FaJs, FaLaptopCode,
+  FaReact, FaNodeJs, FaGitAlt, FaHtml5, FaCss3Alt, FaJs, FaLaptopCode,
   FaDatabase, FaServer, FaTools, FaCode, FaTimes, FaStar, FaInfo
 } from 'react-icons/fa';
-import { SiTypescript, SiTailwindcss, SiMongodb, SiExpress, SiRedux, SiNextdotjs, SiVite, SiFramer, SiPhp, SiMysql } from 'react-icons/si';
+import { SiTypescript, SiTailwindcss, SiMongodb, SiExpress, SiPhp, SiMysql } from 'react-icons/si';
 
 interface Skill {
   name: string;

@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { FaGithub, FaSearch, FaStar, FaCode, FaMobile, FaServer, FaLaptopCode, FaHeart, FaClock } from 'react-icons/fa';
+import { FaGithub, FaSearch, FaStar, FaCode, FaMobile, FaServer, FaLaptopCode, FaHeart } from 'react-icons/fa';
 import FreshCo from '../assets/FreshCo.jpeg';
 import BloodDonation from '../assets/BloodDonation.png';
 
