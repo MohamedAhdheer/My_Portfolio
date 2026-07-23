@@ -1,13 +1,14 @@
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { FaEnvelope, FaUser, FaComment, FaPhone, FaMapMarkerAlt, FaGithub, FaLinkedin, FaCheck, FaTimes, FaPaperPlane, FaSpinner, FaInstagram } from 'react-icons/fa';
 import emailjs from '@emailjs/browser';
 
 const Contact = () => {
-  useEffect(() => {
-    // Initialize EmailJS with your public key
-    emailjs.init('pOhg4Ja8CH8KeCzpu');
-  }, []);
+  const emailJsConfig = {
+    serviceId: import.meta.env.VITE_EMAILJS_SERVICE_ID || 'service_nd1b8se',
+    templateId: import.meta.env.VITE_EMAILJS_TEMPLATE_ID || 'template_5lv6yqn',
+    publicKey: import.meta.env.VITE_EMAILJS_PUBLIC_KEY || 'pOhg4Ja8CH8KeCzpu',
+  };
 
   const [formData, setFormData] = useState({
     name: '',
@@ -73,23 +74,29 @@ const Contact = () => {
       const templateParams = {
         from_name: formData.name,
         from_email: formData.email,
+        reply_to: formData.email,
         subject: formData.subject,
         message: formData.message,
         to_email: 'ahdheerofficial1@gmail.com',
       };
 
       await emailjs.send(
-        'service_nd1b8se',
-        'template_5lv6yqn',
+        emailJsConfig.serviceId,
+        emailJsConfig.templateId,
         templateParams,
-        'pOhg4Ja8CH8KeCzpu'
+        { publicKey: emailJsConfig.publicKey }
       );
       
       setSuccess(true);
       setFormData({ name: '', email: '', subject: '', message: '' });
     } catch (error) {
-      console.error('Error:', error);
-      setError('Failed to send message. Please try again or contact me directly at ahdheerofficial1@gmail.com');
+      const emailJsError = error as { status?: number; text?: string };
+      console.error('EmailJS submission failed:', emailJsError.status, emailJsError.text);
+      setError(
+        emailJsError.status === 429
+          ? 'Too many messages were sent recently. Please wait a moment and try again.'
+          : 'The message service is temporarily unavailable. Please email me directly instead.'
+      );
     } finally {
       setLoading(false);
     }
@@ -406,9 +413,19 @@ const Contact = () => {
                         animate={{ opacity: 1, y: 0 }}
                         className="bg-error/10 border border-error/30 rounded-lg p-4 text-error text-sm"
                       >
-                        <div className="flex items-center">
-                          <FaTimes className="mr-2" />
-                          {error}
+                        <div className="flex items-start">
+                          <FaTimes className="mr-2 mt-0.5 shrink-0" />
+                          <span>
+                            {error}{' '}
+                            <a
+                              className="font-semibold underline underline-offset-2"
+                              href={`mailto:ahdheerofficial1@gmail.com?subject=${encodeURIComponent(formData.subject)}&body=${encodeURIComponent(
+                                `Name: ${formData.name}\nEmail: ${formData.email}\n\n${formData.message}`
+                              )}`}
+                            >
+                              Open your email app
+                            </a>
+                          </span>
                         </div>
                       </motion.div>
                     )}
@@ -446,4 +463,4 @@ const Contact = () => {
   );
 };
 
-export default Contact; 
+export default Contact;

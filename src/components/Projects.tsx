@@ -3,6 +3,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { FaGithub, FaSearch, FaStar, FaCode, FaMobile, FaServer, FaLaptopCode, FaHeart } from 'react-icons/fa';
 import FreshCo from '../assets/FreshCo.jpeg';
 import BloodDonation from '../assets/BloodDonation.png';
+import SLPAMedicalClaims from '../assets/SLPAMedicalClaims.png';
 
 interface Project {
   id: string;
@@ -24,13 +25,14 @@ const Projects: React.FC = () => {
   const [isLoading, setIsLoading] = useState(true);
 
   const categories = [
-    { id: 'all', name: 'All Projects', icon: FaCode, count: 2 },
-    { id: 'full-stack', name: 'Full Stack', icon: FaServer, count: 2 },
+    { id: 'all', name: 'All Projects', icon: FaCode, count: 3 },
+    { id: 'full-stack', name: 'Full Stack', icon: FaServer, count: 3 },
     { id: 'web-mini', name: 'Web Apps', icon: FaLaptopCode, count: 0 },
     { id: 'mobile', name: 'Mobile Apps', icon: FaMobile, count: 0 },
   ];
 
   const projects: Project[] = [
+    
     {
       id: '1',
       title: 'Advanced Blood Donation System',
@@ -56,6 +58,19 @@ const Projects: React.FC = () => {
       stats: { stars: 145, forks: 38 },
       difficulty: 'Advanced',
       duration: '3 months',
+    },
+    {
+      id: '3',
+      title: 'SLPA Medical Claim Tracking System',
+      description: 'An ongoing medical claim registration and tracking system for the Sri Lanka Ports Authority. It enables authorized administrators to review claim requests, monitor approval progress, update claim records, and manage employee details and remarks.',
+      image: SLPAMedicalClaims,
+      github: 'https://github.com/MohamedAhdheer/medical-claim-tracking-system-SLPA',
+      category: 'full-stack',
+      technologies: ['PHP', 'MySQL', 'JavaScript', 'HTML5', 'CSS3'],
+      featured: true,
+      stats: { stars: 0, forks: 0 },
+      difficulty: 'Ongoing',
+      duration: 'In development',
     },
   ];
 
